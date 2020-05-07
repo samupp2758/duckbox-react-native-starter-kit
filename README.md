@@ -1,9 +1,4 @@
-<p align="center">
-duckbox-react-native-starter-kit
-</p>
-
-##### Sponsored By DuckBox(https://duckbox.com.br) 
-
+# duckbox-react-native-starter-kit
 
 <p align="center">
   <a href="https://www.npmjs.org/package/react-native">
