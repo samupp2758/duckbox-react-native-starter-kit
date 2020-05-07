@@ -8,7 +8,7 @@
 
 ## Authors
 
->Samuel
+>Samuel Vargas
 [Github](https://github.com/samupp2758)
 [twitter](https://twitter.com/samupp2758)
 
