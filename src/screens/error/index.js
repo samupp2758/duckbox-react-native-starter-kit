@@ -18,9 +18,14 @@ export default class error extends Component {
         static navigationOptions = {
             header: null
         }
-    go = (where,things) => {
-        this.props.navigation.push(where,things)
-    }
+        go = (where,things) => {
+            this.props.navigation.push(where,things);
+      
+          }
+      
+          go2 = (where,things) => {
+            this.props.navigation.navigate(where,things);
+          }
     static navigationOptions = {
         header: null
     }

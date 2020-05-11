@@ -48,13 +48,13 @@ export default class main extends Component {
             header: null
         }
         go = (where,things) => {
-            this.props.navigation.navigate('Home', {
-              screen: where,
-              params: things,
-            });
+            this.props.navigation.push(where,things);
+      
           }
       
-   
+          go2 = (where,things) => {
+            this.props.navigation.navigate(where,things);
+          }
     state = {
     refreshing:false,
       dev: "Desenvolvido por DuckBox Company",

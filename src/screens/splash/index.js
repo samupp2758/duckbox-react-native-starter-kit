@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { YellowBox,
     StatusBar,
-    Alert } from 'react-native';
+    Alert,
+  Animated } from 'react-native';
 import { 
     Container,
     Title,
@@ -20,9 +21,16 @@ export default class splash extends Component {
       }
 
       async componentDidMount(){
+        await Animated.timing(
+          this.state.opacity,
+          {
+            toValue: 1,
+            duration: 1000,
+          }
+        ).start();
         await setTimeout(async () => {
           this.go('Home');
-        },5000)
+        },4000)
 
         
     }
@@ -31,25 +39,21 @@ export default class splash extends Component {
             header: null
         }
   
-    go = (where,things) => {
-      this.props.navigation.navigate('Home', {
-        screen: where,
-        params: things,
-      });
-    }
-
-    go2 = (where,things) => {
-      this.props.navigation.navigate('Rest', {
-        screen: where,
-        params: things,
-      });
-    }
+        go = (where,things) => {
+          this.props.navigation.push(where,things);
+    
+        }
+    
+        go2 = (where,things) => {
+          this.props.navigation.navigate(where,things);
+        }
     static navigationOptions = {
         header: null,
         tabBarVisible:false
     }
     state = {
       dev: "Desenvolvido por DuckBox Company",
+      opacity:new Animated.Value(0)
     }
 
     render() {
@@ -61,7 +65,10 @@ export default class splash extends Component {
       barStyle="dark-content"
     />
         <Container>
+        <SymbolContainer
+          style={{opacity:this.state.opacity}}>
                 <Symbol/>
+                </SymbolContainer>
             <AnimationLoading source={require('../../images/loading.json')} autoPlay loop />
             <Footer>{this.state.dev}</Footer>    
         </Container>

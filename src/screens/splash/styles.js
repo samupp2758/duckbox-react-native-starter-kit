@@ -15,13 +15,21 @@ export const Container = styled.View`
     align-items: center;  
 `;
 
+
+
 export const Symbol = styled.Image.attrs({
-    source: require("../../images/logo.png"),
-    resizeMode: 'contain'
+  source: require("../../images/logo.png"),
+  resizeMode: 'contain'
 
 })`
-    width: 300px;
-    height: 150px;  
+  width: 300;
+  height: 150;  
+`;
+
+
+export const SymbolContainer = styled(Animated.View)`
+width: 300;
+height: 150;  
 `;
 
 
